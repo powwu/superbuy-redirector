@@ -1,0 +1,15 @@
+{
+    "name": "Superbuy Redirector",
+    "version": "1.0",
+    "description": "Redirect Taobao links to Superbuy automatically",
+    "permissions": [
+        "tabs",
+        "*://item.taobao.com/*",
+        "*://item.taobao.cn/*"
+    ],
+    "background": {
+        "scripts": ["redirector.js"],
+        "persistent": false
+    },
+    "manifest_version": 2
+}
