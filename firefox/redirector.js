@@ -5,8 +5,7 @@
 var superbuyURL = "https://www.superbuy.com/en/page/buy?nTag=Home-search&from=search-input&url=";
 var taobaoRegex = "/*\:\/\/item.taobao.*\/*/";
 
-browser.tabs.onUpdated.addListener( // runs whenever a tab gets updated
-    function() {
+browser.tabs.onUpdated.addListener(function() { // runs whenever a tab gets updated
         browser.tabs.query({currentWindow: true, active: true}).then((tabs) => {
             let tab = tabs[0];
             var tabURL = tab.url
@@ -14,7 +13,7 @@ browser.tabs.onUpdated.addListener( // runs whenever a tab gets updated
                 console.log(tabURL + ' matches redirection criteria');
                 tabURL = tabURL.replaceAll(':','%3A').replaceAll('/', '%2F').replaceAll('?', '%3F').replaceAll('=', '%3D').replaceAll('&', '%26') // god this is ugly, fix me
                 console.log(tabURL + ' Fixed URL')
-                redirectURL = superbuyURL + tabURL
+                var redirectURL = superbuyURL + tabURL
                 browser.tabs.update(null, {url:'about:blank'}); // firefox spazzes out if you dont redirect to about:blank first
                 browser.tabs.update(null, {url:redirectURL});
             }

@@ -1,4 +1,4 @@
-Automatically redirects Taobao links to superbuy.
+Automatically redirects Taobao links to Superbuy.
 
 **Chrome 85+/Firefox 77+ ONLY**
 

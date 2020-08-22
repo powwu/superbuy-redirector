@@ -3,8 +3,7 @@
 var superbuyURL = "https://www.superbuy.com/en/page/buy?nTag=Home-search&from=search-input&url=";
 var taobaoRegex = "/*\:\/\/item.taobao.*\/*/";
 
-chrome.tabs.onUpdated.addListener( // runs whenever a tab gets updated
-    function() {
+chrome.tabs.onUpdated.addListener(function() { // runs whenever a tab gets updated
         chrome.tabs.getSelected(null,function(tab) {
             var tabURL = tab.url
             if (tabURL.match(taobaoRegex)) {
